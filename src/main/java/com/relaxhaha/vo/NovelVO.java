@@ -15,6 +15,8 @@ public class NovelVO implements Serializable {
 
     private String intro;
 
+    private String content;
+
     private Integer authorId;
 
     private Integer status;
@@ -22,6 +24,14 @@ public class NovelVO implements Serializable {
     private Integer type;
 
     private Integer wordCount;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Integer getId() {
         return id;
@@ -87,6 +97,7 @@ public class NovelVO implements Serializable {
                 .append("authorId", authorId)
                 .append("age", status)
                 .append("id", id)
+                .append("content", content)
                 .toString();
     }
 }
