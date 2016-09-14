@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+	<generatorConfiguration >
+	<properties resource="${mybatis.generator.dbConfigFile}"/>
+	
+	<context id="com.relaxhaha" targetRuntime="MyBatis3">
+	    <!-- generator生成的文件格式是ansi，改成utf-8, 估计是因为我们中文windows系统的原因，如果不改，就会取当前系统的文件格式，而windows默认的文件格式就是ANSI -->
+	    <property name="javaFileEncoding" value="UTF-8"/>
+	    <!-- 生成中文注释 -->
+	    <!--<plugin type="com.rongyi.framework.mybatis.generator.EntityCommentPlugin"></plugin>-->
+	    <!-- 序列化 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+		<commentGenerator>
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+		<jdbcConnection driverClass="${jdbc.driver}" connectionURL="${jdbc.url}"
+		               userId="${jdbc.username}" password="${jdbc.password}"/>
+	
+		<javaModelGenerator targetPackage="com.relaxhaha.entity" targetProject="${mybatis.generator.javaFileDir}">
+
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="com.relaxhaha.entity" targetProject="${mybatis.generator.resourcesFileDir}"/>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.relaxhaha.mapper" targetProject="${mybatis.generator.javaFileDir}">
+		</javaClientGenerator>
+<!-- 		<table tableName="forum_content" domainObjectName="ForumContent"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="forum_homepage" domainObjectName="ForumHomepage"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="forum_model" domainObjectName="ForumModel"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="forum_position" domainObjectName="ForumPosition"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		
+		<table tableName="novel_author" domainObjectName="NovelAuthorEntity" enableCountByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="novel_chapter" domainObjectName="NovelChapterEntity" enableCountByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="novel_comment" domainObjectName="NovelCommentEntity" enableCountByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="novel_main" domainObjectName="NovelMainEntity" enableCountByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="novel_praise" domainObjectName="NovelPraiseEntity" enableCountByExample="false"
+		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="novel_reader" domainObjectName="NovelReaderEntity" enableCountByExample="false"
+			   enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<table tableName="novel_recommend" domainObjectName="NovelRecommendEntity" enableCountByExample="false"
+			   enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+	</context>
+</generatorConfiguration>
