@@ -8,7 +8,7 @@
 </head>
 
 <body ng-app="myApp">
-<div ng-controller="LoginForm">
+<div ng-controller="chapterForm">
     <div class="col-md-3 text-right">标题</div>
     <div class="col-md-12">
         <input type="text" ng-model="title"  placeholder="请输入20个字符内消息标题" max-length="20">
@@ -20,17 +20,15 @@
 </div>
 <script>
     var app = angular.module('myApp', []);
-    app.controller('LoginForm', function($scope, $http) {
+    app.controller('chapterForm', function($scope, $http) {
         $http({
             data:{'id':1},
             url:'/novel/queryChapterContent',
             method:'POST',
             headers: {'Content-Type': 'application/json'}
         }).success(function(data){
-            console.log(data);
-            alert(data);
-            $scope.title = 1;
-            $scope.name ="name";
+            $scope.title = data.result.data.title;
+            $scope.content = data.result.data.content;
         }).error(function(){
             alert("回掉！错了");
         });
