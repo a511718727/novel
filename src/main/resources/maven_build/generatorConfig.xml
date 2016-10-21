@@ -29,19 +29,8 @@
 		<table tableName="forum_model" domainObjectName="ForumModel"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
 		<table tableName="forum_position" domainObjectName="ForumPosition"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
 		
-		<table tableName="novel_author" domainObjectName="NovelAuthorEntity" enableCountByExample="false"
+		<table tableName="activity_config" domainObjectName="ActivityConfigEntity" enableCountByExample="false"
 		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
-		<table tableName="novel_chapter" domainObjectName="NovelChapterEntity" enableCountByExample="false"
-		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
-		<table tableName="novel_comment" domainObjectName="NovelCommentEntity" enableCountByExample="false"
-		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
-		<table tableName="novel_main" domainObjectName="NovelMainEntity" enableCountByExample="false"
-		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
-		<table tableName="novel_praise" domainObjectName="NovelPraiseEntity" enableCountByExample="false"
-		enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
-		<table tableName="novel_reader" domainObjectName="NovelReaderEntity" enableCountByExample="false"
-			   enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
-		<table tableName="novel_recommend" domainObjectName="NovelRecommendEntity" enableCountByExample="false"
-			   enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+
 	</context>
 </generatorConfiguration>
