@@ -9,26 +9,14 @@
 
 <body ng-app="myApp">
 <div ng-controller="chapterForm">
-    <div class="col-md-3 text-right">标题</div>
-    <div class="col-md-12">
-        <input type="text" ng-model="title"  placeholder="请输入20个字符内消息标题" max-length="20" readonly>
-    </div>
-    <div class="col-md-10 ng-binding">外投特卖</div>
-
-    <div class="col-md-4 text-right">内容：</div>
-    <div class="col-md-12 contentBox">
-        <div class="selOpt">
-        <textarea placeholder="请输入60字符以内的备注"  max-length="60" readonly></textarea>
-    </div>
-        <div class="col-md-13 ng-binding" ng-model="content">
-            啊实打实的
-        </div>
+    <p align="center"> <span class="col-md-10" ng-bind="title"></span></p>
+    <div align="center"><span ng-bind="content"></span></div>
 </div>
 <script>
     var app = angular.module('myApp', []);
     app.controller('chapterForm', function($scope, $http) {
         $http({
-            data:{'id':1},
+            data:{'id':3},
             url:'/novel/queryChapterContent',
             method:'POST',
             headers: {'Content-Type': 'application/json'}
