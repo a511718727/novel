@@ -36,7 +36,7 @@ public class NovelMainDao {
         if (StringUtils.isNotBlank(entity.getName())){
             map.put("name",entity.getName());
         }
-        if (entity.getId() == null){
+        if (entity.getId() != null){
             map.put("id",entity.getId());
         }
         return map;
@@ -52,5 +52,9 @@ public class NovelMainDao {
 
     public boolean deleteById(Integer id){
         return mapper.deleteByPrimaryKey(id) > 0;
+    }
+
+    public NovelMainEntity selectByPrimaryKey(Integer id){
+        return mapper.selectByPrimaryKey(id);
     }
 }

@@ -11,7 +11,7 @@ public class NovelVO implements Serializable {
 
     private Integer id;
 
-    private String title;
+    private String name;
 
     private String intro;
 
@@ -41,12 +41,12 @@ public class NovelVO implements Serializable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getIntro() {
@@ -92,7 +92,7 @@ public class NovelVO implements Serializable {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("title", title)
+                .append("name", name)
                 .append("intro", intro)
                 .append("authorId", authorId)
                 .append("age", status)

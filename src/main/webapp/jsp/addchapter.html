@@ -1,0 +1,12 @@
+
+<div ng-controller="saveChapter">
+  <div class="col-md-3 text-right">标题</div>
+  <div class="col-md-12">
+    <input type="text" ng-model="title"  placeholder="请输入20个字符内消息标题" max-length="20">
+  </div>
+  <div class="col-md-3 text-right">内容</div>
+  <div class="col-md-12 contentBox">
+    <textarea placeholder="请输入60字符以内的备注" ng-model="content" max-length="20000" cols="150" rows="100"></textarea>
+  </div>
+  <a class="cms-btn cms-btn-heavy-lg" ng-click="save()">保存</a>
+</div>

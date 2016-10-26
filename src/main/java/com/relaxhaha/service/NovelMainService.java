@@ -68,6 +68,38 @@ public class NovelMainService {
         }
     }
 
+    public NovelVO queryNovelById(NovelVO vo){
+        logger.info("NovelMainService.queryNovel,vo="+vo);
+        if (vo == null || vo.getId() == null){
+            return null;
+        }
+        try {
+            NovelMainEntity entity1 = dao.selectByPrimaryKey(vo.getId());
+            NovelVO novelVO = new NovelVO();
+            BeanCopyHelper.copyProperties(entity1,novelVO);
+            return novelVO;
+        }catch (Exception e){
+            logger.error("NovelMainService.queryNovel error,"+e);
+            return null;
+        }
+    }
+
+    /**
+     * todo
+     * 未做分页
+     * @return
+     */
+    public List<NovelVO> queryAllNovel(){
+        List<NovelVO> novelVOs = Lists.newArrayList();
+        try {
+            return toVOs(novelVOs, dao.findAllNovel(new NovelMainEntity()));
+        }catch (Exception e){
+            logger.error("NovelMainService.queryAllNovel error,"+e);
+            return novelVOs;
+        }
+    }
+
+
     public boolean deleteNovelById(Integer id){
         logger.info("NovelMainService.deleteNovelById,id="+id);
         List<NovelVO> novelVOs = Lists.newArrayList();

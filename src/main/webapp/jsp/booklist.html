@@ -1,13 +1,13 @@
-<div ng-controller="chapterList">
+<div ng-controller="bookList">
     <table class="table table-hover">
         <tbody>
         <tr>
-            <td>章节标题</td>
+            <td>书籍列表</td>
             <td>id</td>
         </tr>
-        <tr ng-repeat="row in chapterlist" >
-            <td ng-click="detail({{row.id}})">
-                {{row.title}}
+        <tr ng-repeat="row in novelList" >
+            <td ng-click="noveldetail({{row.id}})">
+                {{row.name}}
             </td>
             <td>
                 {{row.id}}

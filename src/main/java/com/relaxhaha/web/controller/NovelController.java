@@ -115,6 +115,21 @@ public class NovelController {
         return ResponseVO.success(chapterService.queryChapterContent(vo.getId()));
     }
 
+    @RequestMapping(value = "/queryNovelList")
+    @ResponseBody
+    public ResponseVO  queryNovelList(@RequestBody NovelVO vo,HttpServletRequest request){
+        logger.info("NovelController.queryNovelList,vo="+vo);
+        return ResponseVO.success(novelService.queryAllNovel());
+    }
+
+    @RequestMapping(value = "/queryNovelDetail")
+    @ResponseBody
+    public ResponseVO  queryNovelDetail(@RequestBody NovelVO vo,HttpServletRequest request){
+        logger.info("NovelController.queryNovelDetail,vo="+vo);
+        //todo 1.null 2.authorName 3.pic
+        return ResponseVO.success(novelService.queryNovelById(vo));
+    }
+
 
 
     private boolean validate(AuthorVO vo) {
